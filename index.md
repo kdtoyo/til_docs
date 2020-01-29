@@ -7,6 +7,7 @@
 
 ~~~
  $ sample test.c
+ $ sample test2.c
 ~~~
 
 
