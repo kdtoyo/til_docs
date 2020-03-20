@@ -1,12 +1,10 @@
 
 # [Ubuntu][apt] apt がロックされている場合の対処
 
-## 
-
 Ubuntuのapt installでLockされているとのエラーがあるが、他のプロセスで
 使用していないため、何か不正な状態となっていることが考えられる。
 
-エラーメッセージ
+### エラーメッセージ
 ~~~
 ubuntu:~$ sudo apt-get install xxxx
 E: ロック /var/lib/dpkg/lock-frontend が取得できませんでした - open (11: リソースが一時的に利用できません)
@@ -14,7 +12,7 @@ E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is an
 ~~~
 
 
-状態
+### 状態
 ~~~
 ubuntu:~$ ls -l /var/lib/dpkg/lock*
 -rw-r----- 1 root root 0 Mar 11 03:51 /var/lib/dpkg/lock
@@ -24,7 +22,7 @@ ubuntu:~$ ls -l /var/lib/dpkg/lock*
 apt-get install中にCtrl-Cで抜けるとか、そういう心当たりがあるようなないような。。
 
 
-対処
+### 対処
 ~~~
 ubuntu:~$ sudo rm /var/lib/dpkg/lock
 ubuntu:~$ sudo rm /var/lib/dpkg/lock-frontend 
